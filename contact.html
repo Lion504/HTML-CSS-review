@@ -9,6 +9,7 @@
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 </head>
 <body>
+    <div id="header-placeholder"></div>
   <div class="container">
       <h1 id="title">☎️Contact Us</h1>
       <div>
@@ -23,16 +24,27 @@
   </div>
 
   <script>
-      // Initialize the Leaflet map
-      const map = L.map('map').setView([51.505, -0.09], 13);
+    // Initialize the Leaflet map
+    const map = L.map('map').setView([51.505, -0.09], 13);
 
-      // Add a tile layer (Map tiles from OpenStreetMap)
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
+    // Add a tile layer (Map tiles from OpenStreetMap)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-      // Add a marker at a specific location (e.g., company location)
-      L.marker([51.505, -0.09]).addTo(map).bindPopup("<b>Our Office</b><br>Come visit us!").openPopup();
-  </script>
+    // Add a marker at a specific location (e.g., company location)
+    L.marker([51.505, -0.09]).addTo(map).bindPopup("<b>Our Office</b><br>Come visit us!").openPopup();
+
+    /*load title*/
+    document.addEventListener("DOMContentLoaded", function() {
+      fetch('header.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('header-placeholder').innerHTML = data;
+        });
+    });
+
+
+    </script>
 </body>
 </html>

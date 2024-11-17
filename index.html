@@ -4,27 +4,44 @@
 <head>
   <meta charset="utf-8">
   <title>Online Toolbox</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-  <div class="container">
-    <h1 id="title" class="title">🧰Online Toolbox</h1>
-    <h2 class="subtitle">CHOOSE A CATEGORY</h2>
-    <div class="button-container">
-      <button class="button" onclick="window.location.href='calculator.html'">🧮Calculator</button>
-      <button class="button" onclick="window.location.href='weather.html'">☁️Weather</button>
-      <button class="button" onclick="window.location.href='mapsimple.html'">🗺️Maps</button>
-      <button class="button" onclick="window.location.href='worldtime.html'">🌏World Time</button>
-      <button class="button" onclick="window.location.href='contact.html'">☎️Contact</button>
-      <button class="button" onclick="window.location.href='about.html'">🥰About Us</button>
-    </div>
-  </div>
+    <div id="header-placeholder"></div>
+    <div class="product">
+      <h2 class="subtitle">Choose a Product</h2>
+            <div class="image-container">
+                <a href="calculator.html" title="Calculator"><img src="img/calculatoricon.png" alt="Calculator" class="clickable-icon"></a>
+                <div class="icon-title">Calculator</div>
+            </div>
+            <div class="image-container">
+                <a href="Weather.html" title="Weather"><img src="img/weathericon.png" alt="Weather" class="clickable-icon"></a>
+                <div class="icon-title">Weather</div>
+            </div>
+            <div class="image-container">
+                <a href="mapsimple.html" title="Maps"><img src="img/mapsicon.png" alt="Maps" class="clickable-icon"></a>
+                <div class="icon-title">Maps</div>
+            </div>
+            <div class="image-container">
+                <a href="worldtime.html" title="World Time"><img src="img/worldtimeicon.png" alt="World Time" class="clickable-icon"></a>
+                <div class="icon-title">World Time</div>
+            </div>
+        </div>
   <div class="footer">
     <a><img src="img/instagramicon.png" alt="Instagram"></a>
     <a><img src="img/Facebookicon.png" alt="Facebook"></a>
   </div>
-  <script src="js/app.js"></script>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+        fetch('header.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+          });
+      });
+
+  </script>
 </body>
 
 </html>

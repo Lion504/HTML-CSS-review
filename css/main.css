@@ -23,8 +23,8 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    padding: 10px 20px;
+    width:100%;
+    padding: 10px 20px 10px 10px;
     position: fixed;
     top: 0;
     left: 0;
@@ -44,48 +44,24 @@ body {
 
 }
 
-.container {
-  background-color: rgba(0, 0, 0, 0.28);
-  padding: 40px;
-  border-radius: 20px;
-  text-align: left;
-  line-height: 15px;
-  max-width: 90vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 200px;
-
-}
-
 #title{
   font-size: 5rem;
   color:white;
+  background-color: rgba(0, 0, 0, 0.28);
 }
 
 .subtitle{
+  font-size: 3rem;
+  background-color: rgba(0, 0, 0, 0.28);
+
+}
+
+.product{
+  margin-top: 200px;
+  text-align: center;
+  flex: 1;
   font-size: 2rem;
   color:white;
-}
-
-.infor{
-  font-size: 1.5rem;
-  color:white;
-  text-align: left;
-}
-
-.aboutus{
-  font-size: 1.5rem;
-  color:white;
-}
-
-
-.num{
-  font-size: 1rem;
-  color:black;
-  text-align: center;
-  font-weight: 500;
 }
 
 .button-container {
@@ -120,33 +96,47 @@ button:active {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.back {
-    margin-top: 25px;
-    background-color: #ffffff;
-    color: #000;
-    border-radius: 8px;
-    padding: 10px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s;
+/* Clickable Images*/
+.image-container {
+    display: inline-block;
+    text-align: center;
+    margin: 10px;
+    background-color: rgba(0, 0, 0, 0.28);
+    padding: 20px;
+    border-radius: 20px;
 }
 
-.back:hover {
-    background-color: #888;
+.clickable-icon {
+    width: 400px;
+    height: 260px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
 }
+
+.clickable-icon:hover {
+    transform: scale(1.1);
+}
+
+
+
 .footer {
-  display: flex;
-  gap: 50px;
-  margin-top: 300px;
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    padding: 20px;
+    color: #fff;
+    margin-top: auto;
 }
 
 .footer a img {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.3s ease;
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s ease;
 }
 
 .footer a:hover img {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
+
