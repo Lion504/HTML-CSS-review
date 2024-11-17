@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Time Map</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">🌍 World Time Map</h1>
+        <div id="map" style="height: 600px; width: 90vw; margin-top: 20px;"></div>
+        <button class="back" onclick="window.location.href='index.html';">Go back</button>
+    </div>
+
+    <script>
+        // Initialize Leaflet map
+        const map = L.map('map').setView([20, 0], 2); // Center of the map globally
+
+        // Add a tile layer (Map tiles from OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Example cities to show time information
+        const cities = [
+            { name: "New York", lat: 40.7128, lng: -74.0060, timezone: "America/New_York" },
+            { name: "London", lat: 51.5074, lng: -0.1278, timezone: "Europe/London" },
+            { name: "Tokyo", lat: 35.6895, lng: 139.6917, timezone: "Asia/Tokyo" },
+            { name: "Sydney", lat: -33.8688, lng: 151.2093, timezone: "Australia/Sydney" },
+            { name: "Moscow", lat: 55.7558, lng: 37.6176, timezone: "Europe/Moscow" }
+        ];
+
+        // Function to add markers with time info for each city
+        function addCityMarkers() {
+            cities.forEach(city => {
+                const currentTime = moment.tz(city.timezone).format('dddd, MMMM Do YYYY, h:mm:ss a');
+
+                // Add marker to the map
+                L.marker([city.lat, city.lng])
+                    .addTo(map)
+                    .bindPopup(`<b>${city.name}</b><br>Current time: ${currentTime}`);
+            });
+        }
+
+        // Call the function to add markers
+        addCityMarkers();
+    </script>
+</body>
+</html>

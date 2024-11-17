@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+  <div class="container">
+      <h1 id="title">☎️Contact Us</h1>
+      <div>
+          <p class="infor">If you have any questions or need more information, feel free to reach out to us!</p>
+          <p class="infor"><strong>Email:</strong> contact@ourcompany.com</p>
+          <p class="infor"><strong>Phone:</strong> +1 (123) 456-7890</p>
+          <p class="infor"><strong>Address:</strong> 123 Main Street, Anytown, Country</p>
+      </div>
+      <h2 class="infor">Find Us Here:</h2>
+      <div id="map" style="height: 300px; width: 100%; margin-top: 20px;"></div>
+      <button class="back" onclick="window.location.href='index.html';">Go back</button>
+  </div>
+
+  <script>
+      // Initialize the Leaflet map
+      const map = L.map('map').setView([51.505, -0.09], 13);
+
+      // Add a tile layer (Map tiles from OpenStreetMap)
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      // Add a marker at a specific location (e.g., company location)
+      L.marker([51.505, -0.09]).addTo(map).bindPopup("<b>Our Office</b><br>Come visit us!").openPopup();
+  </script>
+</body>
+</html>
