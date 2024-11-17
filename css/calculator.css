@@ -1,0 +1,110 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e6e6e6;
+    background-image: url('windows-server-2025-2560x1440-15386.jpg');
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+#title{
+    font-size: 4rem;
+    color:white;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.calculator {
+    background-color: rgba(255, 255, 255, 0.13);
+    border-radius: 30px;
+    padding: 20px;
+    width: 400px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.display {
+    background-color: rgba(0, 0, 0, 0.47);
+    border-radius: 20px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#display {
+    width: 100%;
+    border: none;
+    background: none;
+    color: #fff;
+    font-size: 2.5rem;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+
+.button-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+button {
+    border: none;
+    border-radius: 50%;
+    padding: 5px 5px 5px 5px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 90px;
+    height: 90px;
+}
+
+.function-button {
+    background-color: #a6a6a6;
+    color: #000;
+}
+
+.operator-button {
+    background-color: #ff9500;
+    color: #fff;
+    font-size: 50px;
+}
+
+.number-button {
+    background-color: #333333;
+    color: #fff;
+    font-size: 40px;
+}
+
+button:hover {
+    filter: brightness(1.2);
+}
+
+.equals-button {
+    background-color: #007aff;
+    color: #fff;
+    font-size: 50px;
+}
+
+.equals-button:hover {
+    background-color: #005bb5;
+}
+
+
+.go-back-button {
+    background-color: #ffffff;
+    color: #000;
+    border-radius: 10px;
+    width: 100%;
+    padding: 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.go-back-button:hover {
+    background-color: #888;
+}

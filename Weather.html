@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Checker</title>
+    <link rel="stylesheet" href="css/weather.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="weather.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1 id="title">☁️ Weather Checker</h1>
+        <div class="input-container">
+            <input type="text" id="location" placeholder="Enter city name">
+            <button onclick="checkWeather()" class="check-button">Check</button>
+        </div>
+        <div id="output" class="output"></div>
+        <button class="go-back-button" onclick="window.location.href='index.html';">&#x21A9; Go Back</button>
+    </div>
+</body>
+</html>
